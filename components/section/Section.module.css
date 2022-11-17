@@ -1,0 +1,33 @@
+.section {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 80px - 60px);
+    display: flex;
+    flex-direction: column;
+}
+
+.section_intro {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.intro_text {
+    height: 200px;
+    z-index: 1
+}
+
+.intro_title {
+    font-size: 90px;
+    margin: 10px 0px;
+    font-family: RobotoThin;
+}
+
+.intro_subtitle {
+    border-top: 3px solid var(--purple0);
+    font-size: 30px;
+}

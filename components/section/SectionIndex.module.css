@@ -1,0 +1,26 @@
+.indexes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 190px;
+    position: fixed;
+    top: 40%;
+    left: 15px;
+}
+
+.index {
+    height: 25px;
+    width: 25px;
+    border-radius: 12.5px;
+    background-color: var(--purple0);
+    transition: .4s;
+}
+
+.index_active {
+    height: 50px;
+    width: 25px;
+    border-radius: 12.5px;
+    background-color: var(--purple0);
+    transition: .4s;
+}

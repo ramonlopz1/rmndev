@@ -1,0 +1,26 @@
+.header {
+    border-top: 3px solid var(--purple0);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    padding: 0px 130px;
+}
+
+.title {
+    font-family: RobotoThin;
+    font-size: 24px;
+}
+
+.navigation .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    gap: 20px;
+}
+
+.list .list_item {
+    font-size: 30px;
+}

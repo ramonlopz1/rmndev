@@ -1,5 +1,31 @@
+@font-face {
+  font-family: 'RobotoThin';
+  src: url('../fonts/Roboto-Thin.ttf')
+}
+
+@font-face {
+  font-family: 'PoorStory';
+  src: url('../fonts/PoorStory-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'GemunuLibre-Regular';
+  src: url('../fonts/GemunuLibre-Regular.ttf')
+}
+
+:root {
+  --purple0: #CC0066;
+  --purple1: #460273;
+  --purple2: #5D04D9;
+  --purple3: #4703A6;
+  --purple4: #1B0140;
+  --purple5: #0D0126;
+  --purple6: #05000e;
+}
+
 html,
 body {
+  
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -21,6 +47,6 @@ a {
   }
   body {
     color: white;
-    background: black;
   }
 }
+
