@@ -14,11 +14,11 @@ export default function SectionIndex(props: SectionIndexProps): JSX.Element {
         let count = indexAcvite
         if (window) {
             window.addEventListener('wheel', e => {
-                if (count >= 1 && count < 3 && e.wheelDelta > 0) {
+                if (count >= 1 && count < 3 && e.deltaY > 0) {
                     count += 1
                     setIndexActive(count)
                     onClickHandler(count)
-                } else if (count > 1 && e.wheelDelta <= 0) {
+                } else if (count > 1 && e.deltaY <= 0) {
                     count -= 1
                     setIndexActive(count)
                     onClickHandler(count)
