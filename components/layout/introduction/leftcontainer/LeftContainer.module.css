@@ -1,0 +1,20 @@
+.left_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 2px;
+    background-color: var(--black);
+    height: 100%;
+    width: 30%;
+}
+
+.picture {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    background-color: white;
+}

@@ -31,13 +31,12 @@ import {
 
 import { TbCloudComputing } from "react-icons/tb";
 
-export default function SocialLinks(props): JSX.Element {
+export default function SocialLinks(): JSX.Element {
     return (
         <div className={styles.container}>
             <FaHtml5 />
             <FaCss3Alt />
             <FaSass />
-            <FaBootstrap />
             <FaJs />
             <DiReact />
             <SiNextdotjs />

@@ -5,7 +5,7 @@ import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 export default function Header(): JSX.Element {
     return (
         <header className={styles.header}>
-            <h1 className={styles.title}>{'<ramon dev={web}/>'}</h1>
+            <code className={styles.title}>{'<ramon dev={web}/>'}</code>
             <nav className={styles.navigation}>
                 <ul className={styles.list}>
                     <li className={styles.list_item}>

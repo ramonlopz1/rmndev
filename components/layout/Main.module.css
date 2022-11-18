@@ -12,22 +12,31 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
     text-align: center;
 }
 
 .intro_text {
-    height: 200px;
     z-index: 1
 }
 
 .intro_title {
-    font-size: 90px;
+    border-bottom: 3px solid var(--purple0);
+    font-size: 30px;
+    text-align: left;
+    width: 175px;
     margin: 10px 0px;
     font-family: RobotoThin;
 }
 
 .intro_subtitle {
-    border-top: 3px solid var(--purple0);
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.border_bottom {
+    color: var(--purple0);
+    font-weight: bold;
+}
+
+.author_name {
+    text-align: left;
 }

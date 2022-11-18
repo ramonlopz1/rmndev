@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/templates/Header'
-import Section from '../components/section/Section'
+import Main from '../components/layout/Main'
 import Footer from '../components/templates/Footer'
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
 
       <Header />
-      <Section />
+      <Main />
       <Footer />
     </div>
   )

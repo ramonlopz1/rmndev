@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction, useState, useEffect } from 'react'
 import { FaXRay } from 'react-icons/fa'
-import styles from './SectionIndex.module.css'
+import styles from './MainIndex.module.css'
 
-interface SectionIndexProps {
+interface MainIndexProps {
     setComponentName: Dispatch<SetStateAction<string>>
 }
 
-export default function SectionIndex(props: SectionIndexProps): JSX.Element {
+export default function MainIndex(props: MainIndexProps): JSX.Element {
 
     const [indexAcvite, setIndexActive] = useState(1)
 
@@ -31,7 +31,7 @@ export default function SectionIndex(props: SectionIndexProps): JSX.Element {
         const componentsList: string[] = ['home', 'exp', 'end']
 
         setIndexActive(i)
-        props.setComponentName(componentsList[i-1])
+        props.setComponentName(componentsList[i - 1])
     }
 
     return (
