@@ -1,0 +1,54 @@
+.left_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 40%;
+    background-color: var(--black);
+    border-radius: 2px;
+    border-bottom: 3px solid var(--purple0);
+}
+
+.title {
+    margin-bottom: 0px;
+}
+
+.academic {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+    padding: 0px 30px;
+    box-shadow: var(--shadow);
+}
+
+.card {
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    gap: 15px;
+    padding: 10px 0px;
+    
+}
+
+.card_img {
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    border-radius: 4px;
+}
+
+.card_information {
+    width: 70%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+
+.card_title {
+    margin: 0px;
+    margin-bottom: 5px;
+}

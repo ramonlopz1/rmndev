@@ -28,7 +28,7 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
     }, [])
 
     const onClickHandler = (i: number) => {
-        const componentsList: string[] = ['home', 'exp', 'end']
+        const componentsList: string[] = ['home', 'education', 'end']
 
         setIndexActive(i)
         props.setComponentName(componentsList[i - 1])

@@ -10,12 +10,9 @@ export default function Slide(): JSX.Element {
         let increment = translate
         if (btnIndex === 0 && increment < 0) {
             increment += 220
-            console.log(increment)
             setTranslate(increment)
-
         } else if (btnIndex === 1 && increment > -880) {
             increment -= 220
-            console.log(increment)
             setTranslate(increment)
         }
     }

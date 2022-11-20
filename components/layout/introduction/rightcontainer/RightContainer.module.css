@@ -4,7 +4,8 @@
     height: 100%;
     width: 69%;
     padding: 0px 25px;
-   
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid var(--purple0);
 }
 
 .header {
