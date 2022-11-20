@@ -3,6 +3,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
+    "box box box box"
+    "box box box box"
+    "box box box box"
     "box box box box";
     grid-gap: 6px;
     height: 100%;
@@ -15,7 +18,7 @@
     align-items: center;
     display: flex;
     background-color: var(--black);
-    height: 110px;
+    height: 100%;
     width: 235px;
     box-shadow: var(--shadow);
     border-radius: 0px 0px 4px 4px;
@@ -29,14 +32,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
+    height: 100px;
+    width: 100px;
 }
 
 .box_img {
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 50%;
 }
 
 .box_btn button {
@@ -49,4 +52,19 @@
 
 .box_btn button:hover {
     color: var(--purple0);
+}
+
+.box_back {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: gray;
+    transition: .6s;
+}
+
+.box_back .conclusion {
+    color: var(--purple0);
+    font-weight: bolder;
 }

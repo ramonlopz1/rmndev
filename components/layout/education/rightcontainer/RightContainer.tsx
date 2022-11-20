@@ -8,18 +8,27 @@ import { useState } from 'react'
 export default function RightContainer(): JSX.Element {
 
     const [turnCard, setTurnCard] = useState(false)
+    const [cardIndex, setCardIndex] = useState(0)
 
-    const renderBoxFront = (img) => {
+    const onClickHandler = (bool: boolean, i: number) => {
+        setTurnCard(bool)
+        setCardIndex(i)
+    }
+
+    const renderBoxFront = (img, i) => {
         return (
             <div className={styles.box_front}>
                 <div className={styles.box_img}>
                     <Image
-                        src={img} alt='box image' width={100}
+                        src={img}
+                        alt='box image'
+                        height='50'
+                        width='100'
                     />
                 </div>
                 <div className={styles.box_btn}>
                     <button
-                        onClick={() => setTurnCard(true)}
+                        onClick={() => onClickHandler(true, i)}
                         className={styles.btn}
                     >
                         <TbRotate360 />
@@ -29,7 +38,7 @@ export default function RightContainer(): JSX.Element {
         )
     }
 
-    const renderBoxBack = (course: string, conclusion: string) => {
+    const renderBoxBack = (course: string, conclusion: string, i) => {
         return (
             <div className={styles.box_back}>
                 <div className={styles.course}>
@@ -40,7 +49,7 @@ export default function RightContainer(): JSX.Element {
                 </div>
                 <div className={styles.box_btn}>
                     <button
-                        onClick={() => setTurnCard(false)}
+                        onClick={() => onClickHandler(false, i)}
                         className={styles.btn}
                     >
                         <TbRotate360 />
@@ -53,10 +62,10 @@ export default function RightContainer(): JSX.Element {
     const renderBoxes = () => {
         return certificationList.map((box, i) => {
             return (
-                <div className={styles.box} key={i}>
+                <div className={styles.box} key={i} id={i.toString()}>
                     {
-                        turnCard ? renderBoxBack(box.course, box.conclusion)
-                            : renderBoxFront(box.img)
+                        turnCard && i === cardIndex ? renderBoxBack(box.course, box.conclusion, i)
+                            : renderBoxFront(box.img, i)
                     }
                 </div>
             )
