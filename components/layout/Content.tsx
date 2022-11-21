@@ -1,5 +1,6 @@
 import Introduction from './introduction/Introduction'
 import Education from './education/Education'
+import Contact from './contact/Contact'
 
 interface InformationProps {
     componentName: string
@@ -11,8 +12,9 @@ export default function Content(props: InformationProps): JSX.Element {
 
     return (
         <>
-            {componentName === 'home' ? (<Introduction />) 
-            : componentName === 'education' ? (<Education />) : componentName === 'end' ? (<div>{componentName}</div>) : false}
+            {componentName === 'home' ? (<Introduction />)
+                : componentName === 'education' ? (<Education />)
+                    : componentName === 'end' ? (<Contact />) : false}
         </>
     )
 }

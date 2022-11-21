@@ -1,0 +1,83 @@
+.top_container {
+    border-left: 3px solid var(--purple0);
+    height: 50%;
+    width: 100%;
+    background-color: var(--black);
+    padding: 20px;
+}
+
+.title {
+    margin: 5px 0px;
+    
+}
+
+.email_information {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+    height: 90%;
+    width: 100%;
+}
+
+.inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "email_input1 email_input1"
+    "email_input2 email_input3";
+    height: 100%;
+    width: 49%;
+}
+
+.email_input {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    grid-area: email_input;
+}
+
+.email_input:nth-of-type(1) {
+    grid-area: email_input1;
+}
+
+.email_input:nth-of-type(2) {
+    grid-area: email_input2;
+    width: 99%;
+}
+
+.email_input:nth-of-type(3) {
+    grid-area: email_input3;
+    width: 99%;
+    margin-left: 5px;
+}
+
+.email_input label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 100%;
+    width: 110px;
+}
+
+.email_input input {
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 90%;
+}
+
+.email_content {
+    height: 100%;
+    width: 49%;
+}
+
+.email_content textarea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+}

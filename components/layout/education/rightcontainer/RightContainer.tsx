@@ -22,8 +22,7 @@ export default function RightContainer(): JSX.Element {
                     <Image
                         src={img}
                         alt='box image'
-                        height='50'
-                        width='100'
+                        height={40}
                     />
                 </div>
                 <div className={styles.box_btn}>

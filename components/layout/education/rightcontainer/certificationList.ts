@@ -33,65 +33,55 @@ const certificationList: typeof model[] = [{
     conclusion: '10/2022',
     img: img_cod3r
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
+    name: 'Udemy',
+    course: 'Especificações de APIs com Swagger e OpenAPI',
+    conclusion: '10/2022',
+    img: img_udemy
+}, {
+    name: 'Udemy',
+    course: 'Oracle Integration Cloud Services',
     conclusion: '10/2022',
     img: img_udemy
 }, {
     name: 'UNINASSAU',
     course: 'Análise e Desenvolvimento de Sistemas',
     conclusion: '',
-    img: img_alura
-}, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
     img: img_qualificamais
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'Oracle Cloud: Banco de dados e Infraestrutura como código',
+    conclusion: '08/2022',
+    img: img_alura
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'MySQL',
+    conclusion: '04/2022',
+    img: img_alura
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'Java: Collections',
+    conclusion: '05/2022',
+    img: img_alura
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'Java: Orientação a Objetos',
+    conclusion: '05/2022',
+    img: img_alura
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'Java: Streams, Reader e Writes',
+    conclusion: '05/2022',
+    img: img_alura
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'Acessibilidade web',
+    conclusion: '05/2022',
+    img: img_alura
 }, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
-}, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
-}, {
-    name: 'UNINASSAU',
-    course: 'Análise e Desenvolvimento de Sistemas',
-    conclusion: '',
-    img: ''
+    name: 'Alura',
+    course: 'Git e Github',
+    conclusion: '05/2022',
+    img: img_alura
 }]
 
 export default certificationList

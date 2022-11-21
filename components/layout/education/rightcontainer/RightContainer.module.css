@@ -2,11 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "box box box box"
-    "box box box box"
-    "box box box box"
-    "box box box box";
+    grid-template-areas:
+        "box box box box"
+        "box box box box"
+        "box box box box"
+        "box box box box";
     grid-gap: 6px;
     height: 100%;
     width: 60%;
@@ -23,7 +23,6 @@
     box-shadow: var(--shadow);
     border-radius: 0px 0px 4px 4px;
     border-bottom: 3px solid var(--purple0);
-    justify-content: space-e;
     flex-direction: column;
 }
 
@@ -40,6 +39,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    position: "relative"
 }
 
 .box_btn button {
@@ -48,23 +48,32 @@
     color: white;
     border: 0px;
     font-size: 25px;
+    transform: rotate(220deg);
 }
 
 .box_btn button:hover {
     color: var(--purple0);
+    transition: .6s;
+    transform: rotate(720deg);
 }
 
 .box_back {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     height: 100%;
-    background-color: gray;
-    transition: .6s;
+    width: 100%;
+    background-color: rgb(4, 4, 4);
+    padding: 10px;
+}
+
+.box_back .course {
+    font-size: 14px;
 }
 
 .box_back .conclusion {
     color: var(--purple0);
     font-weight: bolder;
+    font-size: 13px;
 }

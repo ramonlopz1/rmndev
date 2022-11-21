@@ -13,7 +13,7 @@ export default function LeftContainer(): JSX.Element {
         img: img_uninassau
     }, {
         name: 'Escola Ténica Estadual Professor Antônio Carlos Gomes da Costa',
-        course: 'Análise e Desenvolvimento de Sistemas',
+        course: 'Técnico em Desenvolvimento de Software',
         duration: '',
         img: img_etepac
     }, {
