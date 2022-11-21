@@ -54,7 +54,7 @@
 .box_btn button:hover {
     color: var(--purple0);
     transition: .6s;
-    transform: rotate(720deg);
+    transform: rotate(240deg);
 }
 
 .box_back {

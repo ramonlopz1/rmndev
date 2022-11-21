@@ -1,6 +1,29 @@
 .bottom_container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
     height: 50%;
     width: 100%;
+}
+
+.sub_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--black);
-    border-right: 3px solid var(--purple0);
+    border-bottom: 3px solid var(--purple0);
+    height: 100%;
+    width: 50%;
+}
+
+.contact_info {
+    height: 90%;
+    width: 100%;
+}
+
+.web_info {
+    height: 90%;
+    width: 100%;
 }
