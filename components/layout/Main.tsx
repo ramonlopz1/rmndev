@@ -6,11 +6,13 @@ import styles from './Main.module.css'
 import img from '../../public/imgs/sunFace.png'
 import MainIndex from './MainIndex'
 import SocialLinks from './SocialLinks'
+import ChangeContent from './ChangeContent'
 import Content from './Content'
 
 export default function Main(): JSX.Element {
 
     const [componentName, setComponentName] = useState("home")
+    const [indexActive, setIndexActive] = useState(1)
 
     return (
         <section className={styles.section}>
@@ -21,9 +23,31 @@ export default function Main(): JSX.Element {
                     <div className={styles.author_name}> - Edsger Dijkstra</div>
                 </div>
             </div>
+            <div className={styles.btn_change_content}>
+                {indexActive > 1 ?
+                    <ChangeContent
+                        rotateTop={true}
+                        indexActive={indexActive}
+                        setIndexActive={setIndexActive}
+                    />
+                    : false}
+            </div>
             <Content componentName={componentName} />
+            <div className={styles.btn_change_content}>
+                {indexActive < 3 ?
+                    <ChangeContent
+                        rotateTop={false}
+                        indexActive={indexActive}
+                        setIndexActive={setIndexActive}
+                    />
+                    : false}
+            </div>
             <SocialLinks />
-            <MainIndex setComponentName={setComponentName}/>
+            <MainIndex
+                setIndexActive={setIndexActive}
+                indexActive={indexActive}
+                setComponentName={setComponentName}
+            />
         </section>
     )
 }

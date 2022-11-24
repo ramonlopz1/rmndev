@@ -1,0 +1,22 @@
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+}
+
+.icon_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 35px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.icon_wrapper:hover {
+    color: var(--purple0);
+}

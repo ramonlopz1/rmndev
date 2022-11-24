@@ -3,15 +3,17 @@ import { FaXRay } from 'react-icons/fa'
 import styles from './MainIndex.module.css'
 
 interface MainIndexProps {
-    setComponentName: Dispatch<SetStateAction<string>>
+    setComponentName: Dispatch<SetStateAction<string>>,
+    setIndexActive: Dispatch<SetStateAction<number>>,
+    indexActive: number
 }
 
 export default function MainIndex(props: MainIndexProps): JSX.Element {
 
-    const [indexAcvite, setIndexActive] = useState(1)
+    const { setIndexActive, indexActive } = props
 
     useEffect(() => {
-        let count = indexAcvite
+        let count = indexActive
         if (window) {
             window.addEventListener('wheel', e => {
                 if (count >= 1 && count < 3 && e.deltaY > 0) {
@@ -38,7 +40,7 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
         <div className={styles.indexes}>
             <div
                 className={
-                    indexAcvite === 1 ? styles.index_active : styles.index
+                    indexActive === 1 ? styles.index_active : styles.index
                 }
                 onClick={() => onClickHandler(1)}
 
@@ -47,7 +49,7 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
             </div>
             <div
                 className={
-                    indexAcvite === 2 ? styles.index_active : styles.index
+                    indexActive === 2 ? styles.index_active : styles.index
                 }
                 onClick={() => onClickHandler(2)}
             >
@@ -55,7 +57,7 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
             </div>
             <div
                 className={
-                    indexAcvite === 3 ? styles.index_active : styles.index
+                    indexActive === 3 ? styles.index_active : styles.index
                 }
                 onClick={() => onClickHandler(3)}
             >
