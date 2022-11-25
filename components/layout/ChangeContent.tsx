@@ -4,7 +4,9 @@ import { Dispatch, SetStateAction } from 'react'
 interface ChangeContentProps {
     rotateTop: boolean,
     setIndexActive: Dispatch<SetStateAction<number>>,
-    indexActive: number
+    setComponentName: Dispatch<SetStateAction<string>>,
+    indexActive: number,
+    btnPosition: string
 }
 
 export default function ChangeContent(props: ChangeContentProps): JSX.Element {
@@ -15,15 +17,24 @@ export default function ChangeContent(props: ChangeContentProps): JSX.Element {
     // se o index for >= 1 && < 3...
 
     const onClickHandler = () => {
-       
+        let count = props.indexActive
+        const componentsList: string[] = ['home', 'education', 'end']
+
+        if (props.btnPosition === 'top' && props.indexActive > 1) {
+            count--
+            props.setIndexActive(count)
+            props.setComponentName(componentsList[count - 1])
+        } else if (props.btnPosition === 'bottom' && props.indexActive < 3) {
+            count++
+            props.setIndexActive(count)
+            props.setComponentName(componentsList[count - 1])
+        }
     }
 
     return (
         <div className={styles.container}>
             <div
-                style={{
-                    ...rotate
-                }}
+                style={{ ...rotate }}
                 className={styles.icon_wrapper}
                 onClick={() => onClickHandler()}
             >

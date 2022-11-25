@@ -26,9 +26,11 @@ export default function Main(): JSX.Element {
             <div className={styles.btn_change_content}>
                 {indexActive > 1 ?
                     <ChangeContent
+                        btnPosition="top"
                         rotateTop={true}
                         indexActive={indexActive}
                         setIndexActive={setIndexActive}
+                        setComponentName={setComponentName}
                     />
                     : false}
             </div>
@@ -36,9 +38,11 @@ export default function Main(): JSX.Element {
             <div className={styles.btn_change_content}>
                 {indexActive < 3 ?
                     <ChangeContent
+                        btnPosition="bottom"
                         rotateTop={false}
                         indexActive={indexActive}
                         setIndexActive={setIndexActive}
+                        setComponentName={setComponentName}
                     />
                     : false}
             </div>

@@ -45,7 +45,7 @@
     justify-content: space-evenly;
     position: absolute;
     bottom: 0px;
-    background-color: purple;
+    background-color: var(--purple0);
     height: 35px;
     width: 100%;
     border-radius: 0px 0px 20px 20px;

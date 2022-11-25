@@ -15,8 +15,27 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 120px;
-    width: 120px;
-    border-radius: 60px;
+    overflow: hidden;
+    height: 220px;
+    width: 220px;
+    border-radius: 110px;
+    border: 3px solid var(--purple0);
     background-color: white;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+}
+
+.myname {
+    font-size: 25px;
+    margin: 0px;
+    background-color: var(--purple0);
+    padding: 10px 0px;
+    border-radius: 4px;
+    margin-top: -15px;
+    margin-bottom: 10px;
 }
