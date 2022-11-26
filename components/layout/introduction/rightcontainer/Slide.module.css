@@ -26,7 +26,8 @@
     transition: .4s;
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 20px;
     width: calc(5 * 300px);
 }
 

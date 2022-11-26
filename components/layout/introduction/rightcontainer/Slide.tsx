@@ -2,17 +2,17 @@ import { useState, useEffect } from 'react'
 import styles from './Slide.module.css'
 import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/md'
 
-export default function Slide(): JSX.Element {
+interface SlideProps {
+    filter: string
+}
+
+export default function Slide(props: SlideProps): JSX.Element {
 
     const [mongoData, setMongoData] = useState([])
     const [localData, setLocalData] = useState([])
-    const [translate, setTranslate] = useState(0)
 
-    useEffect(() => {
-        fetch('/api/projects')
-            .then(res => res.json())
-            .then(res => setMongoData(res))
-    }, [])
+    const [translate, setTranslate] = useState(0)
+    
 
     useEffect(() => {
         localStorage.setItem("projects", JSON.stringify(mongoData))
@@ -20,16 +20,40 @@ export default function Slide(): JSX.Element {
         setLocalData(localStg)
     }, [mongoData])
 
+    useEffect(() => {
+        fetch('/api/projects')
+            .then(res => res.json())
+            .then(res => setMongoData(res))
+    }, [])
+
     const renderProjects = () => {
-        return localData.map((project, i) => {
+        const filteredData = localData.filter(project => {
+            return project.filter === props.filter
+        })
+
+        const all = localData.map((project, i) => {
             return (
                 <div className={styles.content_element} key={i}>
                     <div className={styles.element_links}>
                         A B
+                        {/* botar like e deslike */}
                     </div>
                 </div>
             )
         })
+
+        const filtered = filteredData.map((project, i) => {
+            return (
+                <div className={styles.content_element} key={i}>
+                    <div className={styles.element_links}>
+                        A B
+                        {/* botar like e deslike */}
+                    </div>
+                </div>
+            )
+        })
+
+        return props.filter === 'all' ? all : filtered
     }
 
     const btnHandler = (event: React.MouseEvent<Element, MouseEvent>, btnIndex: number) => {
