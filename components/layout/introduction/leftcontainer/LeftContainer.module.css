@@ -34,8 +34,23 @@
     font-size: 25px;
     margin: 0px;
     background-color: var(--purple0);
-    padding: 10px 0px;
+    padding: 5px 0px;
     border-radius: 4px;
     margin-top: -15px;
     margin-bottom: 10px;
+}
+
+
+.infos span {
+    border: 2px solid var(--purple0);
+    padding: 10px;
+}
+
+.infos span:nth-of-type(1) {
+    margin-bottom: 10px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.infos span:nth-of-type(2) {
+    border-radius: 0px 0px 4px 4px;
 }

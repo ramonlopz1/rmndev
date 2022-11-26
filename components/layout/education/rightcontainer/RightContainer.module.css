@@ -45,14 +45,14 @@
 .box_btn button {
     cursor: pointer;
     background-color: transparent;
-    color: white;
+    color: var(--purple0);
     border: 0px;
     font-size: 25px;
     transform: rotate(220deg);
 }
 
 .box_btn button:hover {
-    color: var(--purple0);
+    color: black;
     transition: .6s;
     transform: rotate(240deg);
 }
@@ -64,7 +64,7 @@
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    background-color: rgb(4, 4, 4);
+    background-color: white;
     padding: 10px;
 }
 

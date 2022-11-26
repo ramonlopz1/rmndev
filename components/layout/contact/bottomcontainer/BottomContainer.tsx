@@ -6,7 +6,7 @@ export default function BottomContainer(): JSX.Element {
             <div className={styles.sub_container}>
                 <h3>Contato</h3>
                 <div className={styles.contact_info}>
-
+                    
                 </div>
             </div>
             <div className={styles.sub_container}>
