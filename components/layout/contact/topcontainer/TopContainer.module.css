@@ -59,8 +59,10 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    font-weight: bold;
     background-color: var(--purple0);
     height: 100%;
+    color: white;
     width: 90px;
     border-radius: 4px 0px 0px 4px;
 }
@@ -90,6 +92,7 @@
     border-radius: 4px 4px 0px 0px;
     background-color: var(--purple0);
     margin: 0px;
+    color: white;
     text-align: center;
 }
 

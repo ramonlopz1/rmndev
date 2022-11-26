@@ -14,16 +14,16 @@
 }
 
 :root {
-  --purple0: #BFB3A8;
-  --purple1: #460273;
-  --purple2: #5D04D9;
-  --purple3: #4703A6;
-  --purple4: #1B0140;
-  --purple5: #0D0126;
-  --purple6: #05000e;
-  --black: #BCC5CE;
+  --purple0: #262434;
+
+  --black: #D7D7D9;
 
   --shadow: 0px 1px 6px 2px #00000014;
+
+  --vsbg: #262434;
+  --vsfunc: #ddcd84;
+  --vsidentif: #4795a5;
+
 }
 
 html,

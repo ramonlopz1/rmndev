@@ -1,14 +1,22 @@
 .left_container {
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
+    flex-direction: column;
     border-radius: 2px;
     background-color: var(--black);
     height: 100%;
     width: 30%;
+    flex-direction: c;
     box-shadow: var(--shadow);
     border-bottom: 3px solid var(--purple0);
+}
+
+.ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
 }
 
 .picture {
@@ -16,41 +24,96 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-    height: 220px;
-    width: 220px;
-    border-radius: 110px;
-    border: 3px solid var(--purple0);
+    height: 130px;
+    width: 130px;
+    border-radius: 65px;
+    border: 2px solid white;
     background-color: white;
+    z-index: 1;
 }
 
-.infos {
+.card {
+    position: relative
+}
+
+.card_infos {
+    background-color: var(--purple0);
+    height: 80px;
+    margin-left: -40px;
+    border-radius: 0px 8px 0px 0px;
+    width: 270px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 20px;
 }
 
 .myname {
+    color: white;
     font-size: 25px;
     margin: 0px;
-    background-color: var(--purple0);
-    padding: 5px 0px;
     border-radius: 4px;
-    margin-top: -15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-
-.infos span {
-    border: 2px solid var(--purple0);
-    padding: 10px;
+.hr {
+    margin: 0px;
+    width: 100px;
 }
 
-.infos span:nth-of-type(1) {
-    margin-bottom: 10px;
-    border-radius: 4px 4px 0px 0px;
+.profission {
+    color: var(--vsfunc);
+    font-weight: bold;
+    font-size: 15px;
 }
 
-.infos span:nth-of-type(2) {
-    border-radius: 0px 0px 4px 4px;
+.card_icons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    background-color: white;
+    border-radius: 0px 0px 8px 8px;
+    width: 100px;
+    font-size: 21px;
+    padding: 5px 0px;
+    position: absolute;
+    right: 0px;
 }
+
+.card_icons svg:hover {
+    cursor: pointer;
+    color: var(--vsfunc);
+}
+
+.jobs {
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid white;
+    background-color: var(--vsbg);
+    height: 300px;
+    width: 360px;
+    border-radius: 0px 0px 8px 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jobs_description {
+    display: flex;
+    flex-direction: column;
+}
+
+.jobs_description hr {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+}
+
+.jobs svg {
+    position: absolute;
+    bottom: 0px;
+}
+

@@ -8,6 +8,7 @@
     background-color: var(--black);
     border-radius: 2px;
     border-bottom: 3px solid var(--purple0);
+    box-shadow: var(--shadow);
 }
 
 .title {
@@ -21,7 +22,7 @@
     height: 90%;
     width: 100%;
     padding: 0px 30px;
-    box-shadow: var(--shadow);
+    
 }
 
 .card {

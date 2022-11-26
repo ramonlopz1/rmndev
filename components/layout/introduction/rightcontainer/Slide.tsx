@@ -4,17 +4,24 @@ import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/
 
 export default function Slide(): JSX.Element {
 
-    const [projectList, setProjectList] = useState([])
+    const [mongoData, setMongoData] = useState([])
+    const [localData, setLocalData] = useState([])
     const [translate, setTranslate] = useState(0)
 
     useEffect(() => {
         fetch('/api/projects')
             .then(res => res.json())
-            .then(res => setProjectList(res))
+            .then(res => setMongoData(res))
     }, [])
 
+    useEffect(() => {
+        localStorage.setItem("projects", JSON.stringify(mongoData))
+        const localStg = JSON.parse(localStorage.getItem("projects"))
+        setLocalData(localStg)
+    }, [mongoData])
+
     const renderProjects = () => {
-        return projectList.map((project, i) => {
+        return localData.map((project, i) => {
             return (
                 <div className={styles.content_element} key={i}>
                     <div className={styles.element_links}>

@@ -10,4 +10,5 @@
 
 .span {
     color: var(--purple0);
+    font-weight: bold;
 }
