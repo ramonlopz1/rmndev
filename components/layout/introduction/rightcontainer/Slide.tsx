@@ -13,6 +13,11 @@ export default function Slide(props: SlideProps): JSX.Element {
 
     const [translate, setTranslate] = useState(0)
     
+    useEffect(() => {
+        fetch('/api/projects')
+            .then(res => res.json())
+            .then(res => setMongoData(res))
+    }, [])
 
     useEffect(() => {
         localStorage.setItem("projects", JSON.stringify(mongoData))
@@ -20,11 +25,6 @@ export default function Slide(props: SlideProps): JSX.Element {
         setLocalData(localStg)
     }, [mongoData])
 
-    useEffect(() => {
-        fetch('/api/projects')
-            .then(res => res.json())
-            .then(res => setMongoData(res))
-    }, [])
 
     const renderProjects = () => {
         const filteredData = localData.filter(project => {

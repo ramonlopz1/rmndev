@@ -4,10 +4,9 @@
     justify-content: space-evenly;
     flex-direction: column;
     border-radius: 2px;
-    background-color: var(--black);
+    background: linear-gradient(180deg, var(--black), var(--purple0));
     height: 100%;
     width: 30%;
-    flex-direction: c;
     box-shadow: var(--shadow);
     border-bottom: 3px solid var(--purple0);
 }
@@ -44,6 +43,7 @@
     width: 270px;
     display: flex;
     flex-direction: column;
+    border-bottom: 2px solid white;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -94,7 +94,7 @@
     justify-content: center;
     border-top: 2px solid white;
     background-color: var(--vsbg);
-    height: 300px;
+    height: 228px;
     width: 360px;
     border-radius: 0px 0px 8px 8px;
     position: relative;

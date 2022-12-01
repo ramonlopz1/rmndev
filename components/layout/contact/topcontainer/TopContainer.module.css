@@ -2,7 +2,7 @@
     border-top: 3px solid var(--purple0);
     height: 50%;
     width: 100%;
-    background-color: var(--black);
+    background: linear-gradient(180deg, var(--black), var(--purple0));
     padding: 20px;
 }
 

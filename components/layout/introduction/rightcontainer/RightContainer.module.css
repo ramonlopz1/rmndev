@@ -6,6 +6,7 @@
     padding: 0px 25px;
     box-shadow: var(--shadow);
     border-bottom: 3px solid var(--purple0);
+    background: linear-gradient(180deg, var(--black), var(--purple0));
 }
 
 .header {
