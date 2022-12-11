@@ -1,12 +1,19 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import styles from './LeftContainer.module.css'
 import img_uninassau from '../../../../public/imgs/academy/uninassau.png'
 import img_etepac from '../../../../public/imgs/academy/etepac.png'
 import img_ifpe from '../../../../public/imgs/academy/ifpe.png'
 
+type academicModel = {
+    name: string,
+    course: string,
+    duration: string,
+    img: StaticImageData
+}[]
+
 export default function LeftContainer(): JSX.Element {
 
-    const academics = [{
+    const academics: academicModel = [{
         name: 'UNINASSAU',
         course: 'Análise e Desenvolvimento de Sistemas',
         duration: '',

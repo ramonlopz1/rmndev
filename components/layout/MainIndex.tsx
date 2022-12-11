@@ -13,7 +13,7 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
     const { setIndexActive, indexActive } = props
 
     useEffect(() => {
-        let count = indexActive
+        let count: number = indexActive
         if (window) {
             window.addEventListener('wheel', e => {
                 if (count >= 1 && count < 3 && e.deltaY > 0) {
@@ -29,7 +29,7 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
         }
     }, [])
 
-    const onClickHandler = (i: number) => {
+    const onClickHandler = (i: number): void => {
         const componentsList: string[] = ['home', 'education', 'end']
 
         setIndexActive(i)

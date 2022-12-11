@@ -10,7 +10,6 @@ export default function Slide(props: SlideProps): JSX.Element {
 
     const [mongoData, setMongoData] = useState([])
     const [localData, setLocalData] = useState([])
-
     const [translate, setTranslate] = useState(0)
     
     useEffect(() => {

@@ -16,7 +16,7 @@ export default async function handler(req, res) {
             })
         }
     } else {
-        res.status(500).send({
+        res.status(504).send({
             error: "You're not authorized to use this method."
         })
     }

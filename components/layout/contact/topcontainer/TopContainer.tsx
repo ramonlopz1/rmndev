@@ -5,7 +5,7 @@ export default function TopContainer(): JSX.Element {
 
     const [emailContent, setEmailContent] = useState({})
 
-    const emailHandler = (event) => {
+    const emailHandler = (event: any): void => {
         event.preventDefault()
 
         const email = {

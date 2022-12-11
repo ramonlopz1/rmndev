@@ -11,13 +11,14 @@ interface ChangeContentProps {
 
 export default function ChangeContent(props: ChangeContentProps): JSX.Element {
 
-    const rotate = props.rotateTop ? { transform: 'rotate(90deg)' }
+    const rotate = props.rotateTop
+        ? { transform: 'rotate(90deg)' }
         : { transform: 'rotate(270deg)' }
 
     // se o index for >= 1 && < 3...
 
-    const onClickHandler = () => {
-        let count = props.indexActive
+    const onClickHandler = (): void => {
+        let count: number = props.indexActive
         const componentsList: string[] = ['home', 'education', 'end']
 
         if (props.btnPosition === 'top' && props.indexActive > 1) {
