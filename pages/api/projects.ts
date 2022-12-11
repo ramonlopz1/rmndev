@@ -1,7 +1,8 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import ProjectsModel from "../../models/ProjectsModel";
 import connectMongo from "../../services/mongoConnect";
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {
         try {
             await connectMongo()

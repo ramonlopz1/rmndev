@@ -1,6 +1,14 @@
-import mongoose from "mongoose";
+import { Schema, models, model } from "mongoose";
 
-const ProjectsSchema = new mongoose.Schema({
+interface ProjectModel {
+    name: string,
+    date: string,
+    technologies: { name: string }[],
+    uri: string,
+    img: string
+}
+
+const ProjectsSchema = new Schema<ProjectModel>({
     name: { type: String },
     date: { type: String, },
     technologies: [{ name: String }],
@@ -8,4 +16,4 @@ const ProjectsSchema = new mongoose.Schema({
     img: { type: String }
 }, { timestamps: true })
 
-export default mongoose.models.projects || mongoose.model("projects", ProjectsSchema) 
+export default models.projects || model<ProjectModel>("projects", ProjectsSchema) 

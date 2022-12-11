@@ -1,17 +1,26 @@
 import { useState, useEffect } from 'react'
 import styles from './Slide.module.css'
 import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/md'
+import { GetStaticProps } from 'next'
 
+export const getStaticProps: GetStaticProps = async (context) => {
+    // ...
+
+    return {
+        props: ""
+    }
+}
 interface SlideProps {
     filter: string
 }
+
 
 export default function Slide(props: SlideProps): JSX.Element {
 
     const [mongoData, setMongoData] = useState([])
     const [localData, setLocalData] = useState([])
     const [translate, setTranslate] = useState(0)
-    
+
     useEffect(() => {
         fetch('/api/projects')
             .then(res => res.json())
