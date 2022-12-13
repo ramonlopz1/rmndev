@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react'
 import styles from './Slide.module.css'
 import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/md'
 import { GetStaticProps } from 'next'
+import Loading from '../../../templates/Loading'
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    // ...
+// export const getStaticProps: GetStaticProps = async (context) => {
+//     // ...
 
-    return {
-        props: ""
-    }
-}
+//     return {
+//         props: ""
+//     }
+// }
 interface SlideProps {
     filter: string
 }
-
 
 export default function Slide(props: SlideProps): JSX.Element {
 
@@ -35,7 +35,7 @@ export default function Slide(props: SlideProps): JSX.Element {
 
 
     const renderProjects = () => {
-        const filteredData = localData.filter(project => {
+        const projectList = localData.filter(project => {
             return project.filter === props.filter
         })
 
@@ -50,7 +50,7 @@ export default function Slide(props: SlideProps): JSX.Element {
             )
         })
 
-        const filtered = filteredData.map((project, i) => {
+        const filtered = projectList.map((project, i) => {
             return (
                 <div className={styles.content_element} key={i}>
                     <div className={styles.element_links}>
@@ -89,7 +89,7 @@ export default function Slide(props: SlideProps): JSX.Element {
                     className={styles.content}
                     style={{ transform: `translateX(${translate}px)` }}
                 >
-                    {renderProjects()}
+                    {localData ? renderProjects() : <Loading/>}
                 </div>
             </div>
             <button

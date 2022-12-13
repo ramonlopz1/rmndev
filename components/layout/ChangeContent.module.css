@@ -15,6 +15,7 @@
     height: 35px;
     font-size: 28px;
     cursor: pointer;
+    color: var(--vsfunc);
 }
 
 .icon_wrapper:hover {

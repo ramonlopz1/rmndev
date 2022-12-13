@@ -4,9 +4,12 @@
     height: 100%;
     width: 69%;
     padding: 0px 25px;
-    box-shadow: var(--shadow);
+  
     border-bottom: 3px solid var(--purple0);
-    background: linear-gradient(180deg, var(--black), var(--purple0));
+    background: rgba(38, 36, 52, 0.63);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
 }
 
 .header {
@@ -19,6 +22,7 @@
 
 .title {
     margin: 0px;
+    color: white;
 }
 
 .section {

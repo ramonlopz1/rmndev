@@ -16,7 +16,17 @@
 }
 
 .intro_text {
-    z-index: 1
+    z-index: 1;
+    /* From https://css.glass */
+    background: rgba(38, 36, 52, 0.63);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--purple0);
+    padding: 20px ;
+    color: white;
+    margin-top: 30px;
 }
 
 .intro_title {
@@ -32,8 +42,8 @@
     font-size: 20px;
 }
 
-.border_bottom {
-    color: var(--purple0);
+.text_highlight {
+    color: var(--vsfunc);
     font-weight: bold;
 }
 

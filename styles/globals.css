@@ -15,11 +15,8 @@
 
 :root {
   --purple0: #262434;
-
   --black: #3f3d4c;
-
   --shadow: 0px 1px 6px 2px #00000014;
-
   --vsbg: #262434;
   --vsfunc: #ddcd84;
   --vsidentif: #4795a5;
@@ -28,7 +25,10 @@
 
 html,
 body {
-  background-color: white;
+  background-image: url(../public/imgs/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,

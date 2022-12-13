@@ -4,10 +4,13 @@
     justify-content: space-evenly;
     flex-direction: column;
     border-radius: 2px;
-    background: linear-gradient(180deg, var(--black), var(--purple0));
+
     height: 100%;
     width: 30%;
-    box-shadow: var(--shadow);
+    background: rgba(38, 36, 52, 0.63);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 3px solid var(--purple0);
 }
 
@@ -116,4 +119,3 @@
     position: absolute;
     bottom: 0px;
 }
-

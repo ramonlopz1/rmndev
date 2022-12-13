@@ -1,4 +1,4 @@
-
+    
 import { useState } from 'react'
 import Image from 'next/image'
 
@@ -19,7 +19,7 @@ export default function Main(): JSX.Element {
             <div className={styles.section_intro}>
                 <div className={styles.intro_text}>
                     <h1 className={styles.intro_title}>#letsprogram</h1>
-                    <span className={styles.intro_subtitle}>A <span className={styles.border_bottom}>arte</span> de programar consiste na <span className={styles.border_bottom}>arte</span> de organizar a <span className={styles.border_bottom}>complexidade</span>.</span>
+                    <span className={styles.intro_subtitle}>A <span className={styles.text_highlight}>arte</span> de programar consiste na <span className={styles.text_highlight}>arte</span> de organizar a <span className={styles.text_highlight}>complexidade</span>.</span>
                     <div className={styles.author_name}> - Edsger Dijkstra</div>
                 </div>
             </div>
