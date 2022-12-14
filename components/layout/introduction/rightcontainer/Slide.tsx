@@ -43,8 +43,8 @@ export default function Slide(props: SlideProps): JSX.Element {
             return (
                 <div className={styles.content_element} key={i}>
                     <div className={styles.element_links}>
-                        A B
-                        {/* botar like e deslike */}
+                        A B D
+                        {/* add like e deslike */}
                     </div>
                 </div>
             )
@@ -54,8 +54,8 @@ export default function Slide(props: SlideProps): JSX.Element {
             return (
                 <div className={styles.content_element} key={i}>
                     <div className={styles.element_links}>
-                        A B
-                        {/* botar like e deslike */}
+                        A B C
+                        {/* add like e deslike */}
                     </div>
                 </div>
             )
