@@ -4,6 +4,8 @@ import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/
 import { GetStaticProps } from 'next'
 import Loading from '../../../templates/Loading'
 
+import Image from 'next/image'
+
 // export const getStaticProps: GetStaticProps = async (context) => {
 //     // ...
 
@@ -15,53 +17,63 @@ interface SlideProps {
     filter: string
 }
 
+type ProjectsList = {
+    _id: string,
+    name: string,
+    filter: string,
+    technologies: { _id: string, name: string }[],
+    uri: string,
+    img: string
+}[]
+
 export default function Slide(props: SlideProps): JSX.Element {
 
-    const [mongoData, setMongoData] = useState([])
-    const [localData, setLocalData] = useState([])
-    const [translate, setTranslate] = useState(0)
+    const [mongoData, setMongoData] = useState<ProjectsList>([])
+    const [allData, setAllData] = useState<ProjectsList>([])
+    const [translate, setTranslate] = useState<number>(0)
 
-    useEffect(() => {
+    useEffect((): void => {
+        localStorage.setItem("projects", JSON.stringify(mongoData))
+        const localStg: ProjectsList = JSON.parse(localStorage.getItem("projects"))
+        setAllData(localStg)
+    }, [mongoData])
+
+
+    useEffect((): void => {
         fetch('/api/projects')
             .then(res => res.json())
             .then(res => setMongoData(res))
     }, [])
 
-    useEffect(() => {
-        localStorage.setItem("projects", JSON.stringify(mongoData))
-        const localStg = JSON.parse(localStorage.getItem("projects"))
-        setLocalData(localStg)
-    }, [mongoData])
+    const renderCardProject = (): JSX.Element[] => {
+        let data: ProjectsList
 
+        if (props.filter === `all`) {
+            data = allData
+        } else {
+            data = allData.filter(project => {
+                return project.filter === props.filter
+            })
+        }
 
-    const renderProjects = () => {
-        const projectList = localData.filter(project => {
-            return project.filter === props.filter
-        })
-
-        const all = localData.map((project, i) => {
+        return data.map((project, i): JSX.Element => {
             return (
                 <div className={styles.content_element} key={i}>
-                    <div className={styles.element_links}>
-                        A B D
-                        {/* add like e deslike */}
-                    </div>
+                    <Image src={project.uri} alt="project img" fill  />
+                    {renderCardLabel(project.name)}
                 </div>
             )
         })
+    }
 
-        const filtered = projectList.map((project, i) => {
-            return (
-                <div className={styles.content_element} key={i}>
-                    <div className={styles.element_links}>
-                        A B C
-                        {/* add like e deslike */}
-                    </div>
-                </div>
-            )
-        })
-
-        return props.filter === 'all' ? all : filtered
+    const renderCardLabel = (name: string): JSX.Element => {
+        return (
+            <div className={styles.element_links}>
+                <span className={styles.label_name}>{name}</span>
+                <span className={styles.label_icon}>like</span>
+                <span className={styles.label_like}>12</span>
+            </div>
+        )
     }
 
     const btnHandler = (event: React.MouseEvent<Element, MouseEvent>, btnIndex: number) => {
@@ -89,7 +101,7 @@ export default function Slide(props: SlideProps): JSX.Element {
                     className={styles.content}
                     style={{ transform: `translateX(${translate}px)` }}
                 >
-                    {localData ? renderProjects() : <Loading/>}
+                    {allData ? renderCardProject() : <Loading />}
                 </div>
             </div>
             <button

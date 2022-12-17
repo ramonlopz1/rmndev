@@ -17,10 +17,11 @@
 }
 
 .wrapper_overflowhidden {
-    height: 80%;
+    height: 90%;
     width: 83%;
     overflow: hidden;
-} 
+    border-radius: 20px;
+}
 
 .content {
     transition: .4s;
@@ -29,15 +30,15 @@
     justify-content: left;
     gap: 20px;
     width: calc(5 * 300px);
+    border-radius: 20px;
 }
 
 .content_element {
     background-color: gray;
-    height: 240px;
+    height: 255px;
     width: 200px;
-    border-radius: 20px;
     position: relative;
-    box-shadow: 0px 0px 15px 0px #00000042;
+    overflow: hidden;
 }
 
 .element_links {
@@ -49,6 +50,17 @@
     background-color: var(--purple0);
     height: 35px;
     width: 100%;
-    border-radius: 0px 0px 20px 20px;
-    
+    transition: .4s;
+    font-size: 13px;
+    color: white
+}
+
+.element_links:hover {
+    background: linear-gradient(0deg, var(--purple0), #2624348d);
+    height: 90%;
+    box-shadow: 0px -4px 11px 7px #2624348d;
+}
+
+.label_name {
+    font-weight: bold;
 }
