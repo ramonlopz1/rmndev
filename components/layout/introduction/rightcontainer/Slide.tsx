@@ -15,6 +15,7 @@ import Image from 'next/image'
 // }
 interface SlideProps {
     filter: string
+    type: string
 }
 
 type ProjectsList = {
@@ -23,7 +24,8 @@ type ProjectsList = {
     filter: string,
     technologies: { _id: string, name: string }[],
     uri: string,
-    img: string
+    img: string,
+    type: string
 }[]
 
 export default function Slide(props: SlideProps): JSX.Element {
@@ -57,12 +59,14 @@ export default function Slide(props: SlideProps): JSX.Element {
         }
 
         return data.map((project, i): JSX.Element => {
-            return (
-                <div className={styles.content_element} key={i}>
-                    <Image src={project.uri} alt="project img" fill  />
-                    {renderCardLabel(project.name)}
-                </div>
-            )
+            if (project.type === props.type) {
+                return (
+                    <div className={styles.content_element} key={i}>
+                        <Image src={project.uri} alt="project img" fill />
+                        {renderCardLabel(project.name)}
+                    </div>
+                )
+            }
         })
     }
 

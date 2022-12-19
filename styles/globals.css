@@ -25,6 +25,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   background-image: url(../public/imgs/bg.jpg);
   background-position: center;
   background-repeat: no-repeat;

@@ -9,21 +9,24 @@ interface MainIndexProps {
 }
 
 export default function MainIndex(props: MainIndexProps): JSX.Element {
-
     const { setIndexActive, indexActive } = props
-
+    
     useEffect(() => {
         let count: number = indexActive
         if (window) {
             window.addEventListener('wheel', e => {
                 if (count >= 1 && count < 3 && e.deltaY > 0) {
-                    count += 1
-                    setIndexActive(count)
-                    onClickHandler(count)
+                    count += 0.25
+                    if (Number.isInteger(count)) {
+                        setIndexActive(count)
+                        onClickHandler(count)
+                    }
                 } else if (count > 1 && e.deltaY <= 0) {
-                    count -= 1
-                    setIndexActive(count)
-                    onClickHandler(count)
+                    count -= 0.25
+                    if (Number.isInteger(count)) {
+                        setIndexActive(count)
+                        onClickHandler(count)
+                    }
                 }
             })
         }
@@ -43,7 +46,6 @@ export default function MainIndex(props: MainIndexProps): JSX.Element {
                     indexActive === 1 ? styles.index_active : styles.index
                 }
                 onClick={() => onClickHandler(1)}
-
             >
 
             </div>

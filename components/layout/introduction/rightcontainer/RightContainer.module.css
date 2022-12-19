@@ -14,26 +14,36 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
-    height: 20%;
     width: 100%;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.title {
+.projecttype_btn {
     margin: 0px;
     color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 22px;
+    padding: 20px 20px;
+    border-radius: 12px 12px 0px 0px;
 }
 
 .section {
+    background-color: var(--purple0);
     height: 78%;
     width: 100%;
+    padding-top: 20px;
 }
 
 .filter {
     display: flex;
     width: 40%;
     gap: 10px;
+    margin-left: 20px;
 }
 
 .filter_btn {
