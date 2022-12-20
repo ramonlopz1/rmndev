@@ -4,15 +4,16 @@ import img_cod3r from '../../../../public/imgs/certifications/cod3r.png'
 import img_udemy from '../../../../public/imgs/certifications/udemy.png'
 import img_alura from '../../../../public/imgs/certifications/alura.png'
 import img_qualificamais from '../../../../public/imgs/certifications/qualificamais.png'
+import { StaticImageData } from 'next/image'
 
-const model = {
-    name: 'Oracle',
-    course: 'Oracle Cloud Infrastructure Foundations',
-    conclusion: '10/2022',
-    img: img_oracle
+type model = {
+    name: string,
+    course: string,
+    conclusion: string,
+    img: StaticImageData
 }
 
-const certificationList: typeof model[] = [{
+const certificationList: Array<model> = [{
     name: 'Oracle',
     course: 'Oracle Cloud Infrastructure Foundations',
     conclusion: '10/2022',

@@ -2,58 +2,26 @@ import { useState, useEffect } from 'react'
 import styles from './Slide.module.css'
 import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/md'
 import { GetStaticProps } from 'next'
+import useSlide, { ProjectsList } from '../../../../hooks/useSlide'
 import Loading from '../../../templates/Loading'
 
 import Image from 'next/image'
 
-// export const getStaticProps: GetStaticProps = async (context) => {
-//     // ...
-
-//     return {
-//         props: ""
-//     }
-// }
 interface SlideProps {
     filter: string
-    type: string
+    type: string // web or designer
 }
 
-type ProjectsList = {
-    _id: string,
-    name: string,
-    filter: string,
-    technologies: { _id: string, name: string }[],
-    uri: string,
-    img: string,
-    type: string
-}[]
-
 export default function Slide(props: SlideProps): JSX.Element {
-
-    const [mongoData, setMongoData] = useState<ProjectsList>([])
-    const [allData, setAllData] = useState<ProjectsList>([])
-    const [translate, setTranslate] = useState<number>(0)
-
-    useEffect((): void => {
-        localStorage.setItem("projects", JSON.stringify(mongoData))
-        const localStg: ProjectsList = JSON.parse(localStorage.getItem("projects"))
-        setAllData(localStg)
-    }, [mongoData])
-
-
-    useEffect((): void => {
-        fetch('/api/projects')
-            .then(res => res.json())
-            .then(res => setMongoData(res))
-    }, [])
+   const { localData, translateCard, setTranslateCard } = useSlide()
 
     const renderCardProject = (): JSX.Element[] => {
         let data: ProjectsList
 
         if (props.filter === `all`) {
-            data = allData
+            data = localData
         } else {
-            data = allData.filter(project => {
+            data = localData.filter(project => {
                 return project.filter === props.filter
             })
         }
@@ -81,13 +49,13 @@ export default function Slide(props: SlideProps): JSX.Element {
     }
 
     const btnHandler = (event: React.MouseEvent<Element, MouseEvent>, btnIndex: number) => {
-        let increment = translate
+        let increment = translateCard
         if (btnIndex === 0 && increment < 0) {
             increment += 220
-            setTranslate(increment)
+            setTranslateCard(increment)
         } else if (btnIndex === 1 && increment > -880) {
             increment -= 220
-            setTranslate(increment)
+            setTranslateCard(increment)
         }
     }
 
@@ -103,9 +71,9 @@ export default function Slide(props: SlideProps): JSX.Element {
             <div className={styles.wrapper_overflowhidden}>
                 <div
                     className={styles.content}
-                    style={{ transform: `translateX(${translate}px)` }}
+                    style={{ transform: `translateX(${translateCard}px)` }}
                 >
-                    {allData ? renderCardProject() : <Loading />}
+                    {localData ? renderCardProject() : <Loading />}
                 </div>
             </div>
             <button
