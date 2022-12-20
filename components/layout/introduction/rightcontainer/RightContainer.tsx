@@ -21,6 +21,20 @@ export default function RightContainer(): JSX.Element {
         }
     }
 
+    const filterStyle = (event: React.ChangeEvent<HTMLInputElement>, filter: string) => {
+        const nodeList = document.querySelectorAll<HTMLInputElement>(`.${styles.filter_btn}`)
+
+        for(let i = 0; i < nodeList.length; i++) {
+            if(nodeList[i].name === event.target.name) {
+                nodeList[i].style.color = "gray"
+            } else {
+                nodeList[i].style.color = "white"
+            }
+        }
+        
+        setFilter(filter)
+    }
+
     return (
         <div className={styles.right_container}>
             <div className={styles.header}>
@@ -44,15 +58,18 @@ export default function RightContainer(): JSX.Element {
                 <div className={styles.filter}>
                     <button
                         className={styles.filter_btn}
-                        onClick={() => setFilter("all")}
+                        onClick={e => filterStyle(e, 'all')}
+                        name="all"
                     >Todos</button>
                     <button
                         className={styles.filter_btn}
-                        onClick={() => setFilter("new")}
+                        onClick={e => filterStyle(e, 'new')}
+                        name="new"
                     >Recentes</button>
                     <button
                         className={styles.filter_btn}
-                        onClick={() => setFilter("old")}
+                        onClick={e => filterStyle(e, 'old')}
+                        name="old"
                     >Antigos</button>
                 </div>
                 <Slide filter={filter} type={projectType} />
