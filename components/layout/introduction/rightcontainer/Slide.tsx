@@ -8,7 +8,7 @@ import Loading from '../../../templates/Loading'
 import Image from 'next/image'
 
 interface SlideProps {
-    filter: string
+    filter: string // all / new / old
     type: string // web or designer
 }
 
