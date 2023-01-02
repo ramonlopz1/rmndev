@@ -24,11 +24,50 @@
 
 .title {
     color: white;
+    margin-bottom: 0px;
 }
 
 .contact_info {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     height: 90%;
     width: 100%;
+}
+
+.phones {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    height: 70%;
+}
+
+
+.phone { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: var(--purple0);
+    height: 100%;
+    width: 49.3%;
+    border-bottom: 2px solid var(--purple0);
+}
+
+.subtitle {
+    text-align: center;
+    margin: 0px;
+}
+
+.phone_box {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 40px;
+    font-size: 18px;
 }
 
 .web_info {
