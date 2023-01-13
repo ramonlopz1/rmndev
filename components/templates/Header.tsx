@@ -1,8 +1,12 @@
 import styles from './Header.module.css'
 import Link from 'next/link'
 import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
+import { CiLogin } from "react-icons/ci";
 
 export default function Header(): JSX.Element {
+
+
+
     return (
         <header className={styles.header}>
             <code className={styles.title}>{'<ramon dev={web}/>'}</code>
@@ -18,6 +22,9 @@ export default function Header(): JSX.Element {
                             <FaLinkedinIn />
                         </Link>
                     </li>
+                    <li className={styles.list_item}>
+                        <CiLogin />
+                    </li>   
                 </ul>
             </nav>
         </header>

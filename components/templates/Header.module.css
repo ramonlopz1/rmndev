@@ -30,3 +30,9 @@
 .list .list_item {
     font-size: 30px;
 }
+
+.list .list_item:last-child {
+    margin-left: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
