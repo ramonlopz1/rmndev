@@ -33,7 +33,7 @@ export default function CredentialsContainer(props) {
               onChange={e => setUserInfo({ ...userInfo, email: e.target.value })
               }
               id="user"
-              placeholder="Insira o seu usuário."
+              placeholder="Insira o seu usuário"
             />
           </div>
           <div className={styles.input_pass}>
