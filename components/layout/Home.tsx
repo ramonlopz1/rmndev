@@ -2,14 +2,14 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-import styles from './Main.module.css'
+import styles from './Home.module.css'
 import img from '../../public/imgs/sunFace.png'
 import MainIndex from './MainIndex'
 import SocialLinks from './SocialLinks'
 import ChangeContent from './ChangeContent'
 import Content from './Content'
 
-export default function Main(): JSX.Element {
+export default function Home(): JSX.Element {
 
     const [componentName, setComponentName] = useState("home")
     const [indexActive, setIndexActive] = useState(1)

@@ -15,26 +15,27 @@ export default NextAuth({
 
                 // getUsers contém os dados vindos do backend
                 // const users = await getUsers();
-                // let isAuth;
-                // let idx;
+                const users = [{email: "rmnlpz1", password: "123", role: "admin"}]
+                let isAuth;
+                let idx;
 
-                // for (let i = 0; i < users.length; i++) {
-                //     const user = users[i];
+                for (let i = 0; i < users.length; i++) {
+                    const user = users[i];
 
-                //     if (user.email === email && user.password === password) {
-                //         isAuth = true;
-                //         idx = i;
-                //         break;
-                //     }
+                    if (user.email === email && user.password === password) {
+                        isAuth = true;
+                        idx = i;
+                        break;
+                    }
 
-                //     isAuth = false;
-                // }
+                    isAuth = false;
+                }
                 
-                // if (!isAuth) {
-                //     throw new Error('Invalid credentials');
-                // }
+                if (!isAuth) {
+                    throw new Error('Invalid credentials');
+                }
 
-                // return users[idx];
+                return users[idx];
             }
         })
     ],

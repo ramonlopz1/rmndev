@@ -1,13 +1,16 @@
 import styles from './Header.module.css'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react';
 import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
-import { CiLogin } from "react-icons/ci";
+import { CiLogin, CiLogout } from "react-icons/ci";
 import { useState } from 'react';
 import CredentialsContainer from './CredentialsContainer';
+import { useSession } from 'next-auth/react';
 
 export default function Header(): JSX.Element {
 
     const [show, setShow] = useState<boolean>(true)
+    const { data, status } = useSession()
 
     const showComponent = (show: boolean) => {
         setShow(show)
@@ -44,14 +47,14 @@ export default function Header(): JSX.Element {
                         onMouseEnter={() => showComponent(true)}
                         onMouseLeave={() => showComponent(false)}
                         style={{
-                            backgroundColor: `${show ? 'var(--vsfunc)' : ''}`
+                            backgroundColor: `${show ? 'var(--purple0)' : ''}`
                         }}
                     >
-                        <CiLogin />
+                        {status === 'authenticated' ? <CiLogout onClick={() => signOut()} /> : <CiLogin />}
 
                     </li>
                 </ul>
-                {show ? loginContainer() : false}
+                {show && status === 'unauthenticated' ? loginContainer() : false}
             </nav>
 
         </header>

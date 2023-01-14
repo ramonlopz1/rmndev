@@ -16,7 +16,7 @@ export default function CredentialsContainer(props) {
       redirect: false,
     });
 
-    Router.push("/protected");
+    Router.push("/panel");
   };
 
   return (
@@ -37,16 +37,16 @@ export default function CredentialsContainer(props) {
             />
           </div>
           <div className={styles.input_pass}>
-            <label htmlFor="pass">User</label>
+            <label htmlFor="pass">Pass</label>
             <input
               type="password"
               name="pass"
               required
-              value={userInfo.email}
+              value={userInfo.password}
               onChange={e => setUserInfo({ ...userInfo, password: e.target.value })
               }
               id="user"
-              placeholder="Insira o seu usuário."
+              placeholder="Insira a sua senha."
             />
           </div>
         </div>

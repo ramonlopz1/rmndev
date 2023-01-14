@@ -2,10 +2,13 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/templates/Header'
-import Main from '../components/layout/Main'
+import Main from '../components/layout/Home'
 import Footer from '../components/templates/Footer'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const { pathname } = useRouter()
+
   return (
     <div className={styles.container}>
       <Head>

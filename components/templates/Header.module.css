@@ -47,11 +47,13 @@
     cursor: pointer;
     width: 70px;
     height: 78px;
+    border-radius: 4px 4px 0px 0px;
 }
 .container_login {
     height: 150px;
     width: 230px;
-    background-color: var(--vsfunc);
+ 
     transform: translate(0px, -16px);
     transition: .4s;
+    overflow: hidden;
 }
