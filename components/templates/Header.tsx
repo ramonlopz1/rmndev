@@ -2,10 +2,28 @@ import styles from './Header.module.css'
 import Link from 'next/link'
 import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 import { CiLogin } from "react-icons/ci";
+import { useState } from 'react';
+import CredentialsContainer from './CredentialsContainer';
 
 export default function Header(): JSX.Element {
 
+    const [show, setShow] = useState<boolean>(true)
 
+    const showComponent = (show: boolean) => {
+        setShow(show)
+    }
+
+    const loginContainer = (): JSX.Element => {
+        return (
+            <div
+                className={styles.container_login}
+                onMouseEnter={() => showComponent(true)}
+                onMouseLeave={() => showComponent(false)}
+            >
+                <CredentialsContainer />
+            </div>
+        )
+    }
 
     return (
         <header className={styles.header}>
@@ -22,11 +40,21 @@ export default function Header(): JSX.Element {
                             <FaLinkedinIn />
                         </Link>
                     </li>
-                    <li className={styles.list_item}>
+                    <li className={styles.list_item}
+                        onMouseEnter={() => showComponent(true)}
+                        onMouseLeave={() => showComponent(false)}
+                        style={{
+                            backgroundColor: `${show ? 'var(--vsfunc)' : ''}`
+                        }}
+                    >
                         <CiLogin />
-                    </li>   
+
+                    </li>
                 </ul>
+                {show ? loginContainer() : false}
             </nav>
+
         </header>
+
     )
 }
