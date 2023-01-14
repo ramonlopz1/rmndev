@@ -3,7 +3,7 @@ import { getToken } from 'next-auth/jwt';
 
 // function to define the routes that will be protected
 const isProtectedRoute = (pathname: string) => {
-  return pathname.startsWith('/panel/');
+  return pathname.startsWith('/panel');
 }
 
 const secret = process.env.SECRET
@@ -28,5 +28,5 @@ export async function middleware(req: NextRequest) {
 
 // configure the routes that the middleware function will be applied
 export const config = {
-  matcher: ['/panel']
+  matcher: ['/panel/:path*']
 };
