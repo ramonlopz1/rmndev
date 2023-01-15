@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Header from "../components/templates/Header"
 import Footer from "../components/templates/Footer"
 import { useSession } from "next-auth/react"
@@ -8,13 +9,18 @@ export default function Panel(): JSX.Element {
 
     if (status === 'authenticated') {
         return (
-            <div>
-                <Header />
-                <div>Panel</div>
-                <Footer />
-            </div>
+            <>
+                <Head>
+                    <title>Painel</title>
+                </Head>
+                <div>
+                    <Header />
+                    <div>Panel</div>
+                    <Footer />
+                </div>
+            </>
         )
     } else {
-        return <Unauthorized/>
+        return <Unauthorized />
     }
 }

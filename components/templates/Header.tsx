@@ -3,13 +3,15 @@ import Link from 'next/link'
 import { signOut } from 'next-auth/react';
 import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 import { CiLogin, CiLogout } from "react-icons/ci";
+import { AiOutlineHome } from "react-icons/ai";
+
 import { useState } from 'react';
 import CredentialsContainer from './CredentialsContainer';
 import { useSession } from 'next-auth/react';
 
 export default function Header(): JSX.Element {
 
-    const [show, setShow] = useState<boolean>(true)
+    const [show, setShow] = useState<boolean>(false)
     const { data, status } = useSession()
 
     const showComponent = (show: boolean) => {
@@ -31,7 +33,15 @@ export default function Header(): JSX.Element {
     return (
         <header className={styles.header}>
             <code className={styles.title}>{'<ramon dev={web}/>'}</code>
+
             <nav className={styles.navigation}>
+                {status === 'authenticated' ? (
+                    <Link href="/" className={styles.home_icon}>
+                        <AiOutlineHome style={{ fontSize: '23px' }} />
+                    </Link>
+                ) : false
+
+                }
                 <ul className={styles.list}>
                     <li className={styles.list_item}>
                         <Link href='https://github.com/ramonlopz1' target='_blank' rel='My Github profile'>
@@ -54,8 +64,8 @@ export default function Header(): JSX.Element {
 
                     </li>
                 </ul>
-                {show && status === 'unauthenticated' ? loginContainer() : false}
             </nav>
+            {show && status === 'unauthenticated' ? loginContainer() : false}
 
         </header>
 

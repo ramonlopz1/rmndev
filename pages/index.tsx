@@ -2,13 +2,25 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/templates/Header'
-import Main from '../components/layout/Home'
+import Main from '../components/home/Home'
 import Footer from '../components/templates/Footer'
 import { useRouter } from 'next/router'
 
-export default function Home() {
-  const { pathname } = useRouter()
+// testing static rendering
+export async function getStaticProps() {
+    const fetchData = await fetch("http://localhost:3000/api/projects")
+    const mongoDB_data = await fetchData.json()
+  return {
+    props: {
+      mongoDB_data
+    }
+  }
+}
 
+export default function Home({ mongoDB_data }) {
+  //...mongoDB_data
+  const { pathname } = useRouter()
+  
   return (
     <div className={styles.container}>
       <Head>

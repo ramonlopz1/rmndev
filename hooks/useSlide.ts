@@ -1,3 +1,4 @@
+import SWR from 'swr'
 import { useEffect, useState } from "react"
 
 export type ProjectsList = {
@@ -8,9 +9,17 @@ export type ProjectsList = {
     uri: string,
     img: string,
     type: string
+    date?: Date  // implements later. update mongodb schemas > then show date informate on each project card.
 }[]
 
 export default function useSlide() {
+
+    // test later
+    // const { data, error } = useSWR('/api/projects', fetch)
+    // if (error) return <div>failed to load</div>;
+    // if (!data) return <div>loading...</div>;
+    // return <div>hello {data.name}!</div>;
+
     // States: Get MongoDB Data, set to Local Storage and set translate of X
     const [mongoData, setMongoData] = useState<ProjectsList>(<ProjectsList>[])
     const [localData, setLocalData] = useState<ProjectsList>(<ProjectsList>[])

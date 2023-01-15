@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styles from './Home.module.css'
 import img from '../../public/imgs/sunFace.png'
 import MainIndex from './MainIndex'
-import SocialLinks from './SocialLinks'
+import SocialLinks from '../templates/SocialLinks'
 import ChangeContent from './ChangeContent'
 import Content from './Content'
 
