@@ -29,6 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     } else if (req.method === 'POST') {
         try {
+            console.log(req.body)
             DB.post(req.body)
         } catch (err) {
             console.error(err)
