@@ -1,6 +1,7 @@
 import styles from "./UploadProject.module.css";
 import { useState } from "react";
 import postProject from "../../pages/api/auth/utils/postProject";
+import postImg from "../../pages/api/auth/utils/postImg";
 
 const initialState = {
   name: "Codificador de Textos",
@@ -36,6 +37,18 @@ export default function UploadProject(): JSX.Element {
     e.preventDefault();
     postProject(state);
   };
+
+  const uploadHandler = (e: any) => {
+    const formData = new FormData()
+    const inputFile = e.target
+
+    formData.append(inputFile.name, inputFile.files[0])
+    
+    postImg({
+      formData: formData
+    })
+
+  }
 
   const renderInputText = (name: string, label: string) => {
     return (
@@ -73,7 +86,7 @@ export default function UploadProject(): JSX.Element {
           {renderInputCheck("css", "CSS")}
         </div>
         {renderInputText("uri", "URI")}
-        {renderInputText("img", "IMG")}
+        <input type="file" name="projectimg" id="" onChange={uploadHandler}/>
         <input type="date" name="date" className={styles.date} onChange={onChangeHandler} />
         <select name="type" id="" className={styles.select}>
           <option value="web">Web</option>
