@@ -10,16 +10,15 @@ const initialState = {
   uri: "https://google.com",
   img: "https:imgur.com.br",
   type: "web",
-  date: ''
-}
-
+  date: "",
+};
 
 export default function UploadProject(): JSX.Element {
   const [state, setState] = useState(initialState);
 
   const onChangeHandler = (e) => {
     if (e.target.type === "checkbox") {
-      const { technologies } = state
+      const { technologies } = state;
 
       setState({
         ...state,
@@ -39,16 +38,20 @@ export default function UploadProject(): JSX.Element {
   };
 
   const uploadHandler = (e: any) => {
-    const formData = new FormData()
-    const inputFile = e.target
+    const formData = new FormData();
+    const inputFile = e.target;
+    formData.append(inputFile.name, inputFile.files[0]);
 
-    formData.append(inputFile.name, inputFile.files[0])
-    
     postImg({
-      formData: formData
-    })
+      formData: formData,
+    });
 
-  }
+    const fileName = (inputFile.files[0].name).replaceAll(" ", "_")
+    setState({
+      ...state,
+      img: fileName
+    })
+  };
 
   const renderInputText = (name: string, label: string) => {
     return (
@@ -86,11 +89,17 @@ export default function UploadProject(): JSX.Element {
           {renderInputCheck("css", "CSS")}
         </div>
         {renderInputText("uri", "URI")}
-        <input type="file" name="projectimg" id="" onChange={uploadHandler}/>
-        <input type="date" name="date" className={styles.date} onChange={onChangeHandler} />
+        <input type="file" name="projectimg" onChange={uploadHandler} />
+        <input
+          type="date"
+          name="date"
+          className={styles.date}
+          onChange={onChangeHandler}
+          accept="image/png, image/gif, image/jpeg"
+        />
         <select name="type" id="" className={styles.select}>
           <option value="web">Web</option>
-          <option value="design">Design</option>
+          <option value="designer">Designer</option>
         </select>
         <input type="submit" value="Salvar" className={styles.submit} />
       </div>

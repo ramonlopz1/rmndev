@@ -12,10 +12,12 @@ export interface Project {
 
 const ProjectsSchema = new Schema<Project>({
     name: { type: String },
+    filter: { type: String },
     date: { type: Date, },
     technologies: [{ name: String }, { name: String }, { name: String }],
     uri: { type: String },
-    img: { type: String }
+    img: { type: String },
+    type: { type: String },
 }, { timestamps: true })
 
 export default models.projects || model<Project | any >("projects", ProjectsSchema) 

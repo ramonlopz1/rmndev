@@ -3,13 +3,19 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import path from "path";
 
+export const config = {
+  api: {
+    bodyParser: false
+  }
+}
+
 export default async function handler(req, res) {
   const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./test");
+      cb(null, "./public/imgs/myprojects");
     },
     filename: function (req, file, cb) {
-      cb(null, Date.now() + file.originalname);
+      cb(null, file.originalname);
     },
   });
 
@@ -17,9 +23,10 @@ export default async function handler(req, res) {
 
   upload(req, res, (err) => {
     if (err) {
+      console.log(err)
       return res.end("Bad request!");
     }
-
+    console.log("ok")
     res.send("Success upload!");
   });
 }

@@ -39,6 +39,7 @@ export default function useSlide() {
         fetch('/api/projects')
         .then(res => res.json())
         .then(res => setMongoData(res))
+
     }
 
     return {
