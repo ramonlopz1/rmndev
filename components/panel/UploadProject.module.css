@@ -1,0 +1,77 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.wrapper {
+    align-items: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 90%;
+    width: 80%;
+}
+
+.input_box {
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+}
+
+.input_box label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    background-color: var(--vsfunc);
+    height: 38px;
+    font-weight: bold;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.input_box input {
+    height: 38px;
+    width: 300px;
+    outline: none;
+    border: none;
+}
+
+.inputChecks {
+    display: flex;
+    justify-content: center;
+    gap: 15px
+}
+
+.checkbox {
+    color: var(--vsfunc);
+}
+
+.select {
+    align-self: center;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
+}
+
+.date {
+    width: 200px;
+    height: 40px;
+    align-self: center;
+}
+
+.submit {
+    width: 200px;
+    align-self: center;
+    height: 40px;
+    background-color: var(--vsfunc);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+}

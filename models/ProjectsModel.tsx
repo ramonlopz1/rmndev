@@ -3,7 +3,7 @@ import { Schema, models, model } from "mongoose";
 export interface Project {
     name: string,
     filter: string,
-    technologies: { _id: string, name: string }[],
+    technologies: { name: string }[],
     uri: string,
     img: string,
     type: string
@@ -13,7 +13,7 @@ export interface Project {
 const ProjectsSchema = new Schema<Project>({
     name: { type: String },
     date: { type: Date, },
-    technologies: [{ name: String }],
+    technologies: [{ name: String }, { name: String }, { name: String }],
     uri: { type: String },
     img: { type: String }
 }, { timestamps: true })

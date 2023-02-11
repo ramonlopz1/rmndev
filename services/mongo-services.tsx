@@ -15,10 +15,9 @@ const getOne = async (id: any) => {
     return data
 }
 
-
 const post = async (elem: Object) => {
-    const newProjcet = new ProjectsModel
-    const data = await newProjcet.save()
+    const newProject = new ProjectsModel(elem)
+    const data = await newProject.save()
     return data
 }
 
