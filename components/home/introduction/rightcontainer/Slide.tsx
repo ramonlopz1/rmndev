@@ -30,10 +30,9 @@ export default function Slide(props: SlideProps): JSX.Element {
     }
     return data.map((project, i): JSX.Element => {
       if (project.type === props.type) {
-        console.log(project.img)
         return (
           <div className={styles.content_element} key={i}>
-            <Image src={`/${project.img}`} alt="project img" fill />
+            <Image src={`/imgs/myprojects/${project.img}`} alt="project img" fill />
             {renderCardLabel(project.name)}
           </div>
         );

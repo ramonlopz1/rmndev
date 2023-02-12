@@ -51,6 +51,15 @@
     color: var(--vsfunc);
 }
 
+.file {
+    color: white;
+    width: 300px;
+    overflow: hidden;
+    padding: 10px 5px;
+    align-self: center;
+    background-color: var(--purple0);
+}
+
 .select {
     align-self: center;
     width: 100px;

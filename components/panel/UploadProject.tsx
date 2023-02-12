@@ -19,10 +19,9 @@ export default function UploadProject(): JSX.Element {
   const onChangeHandler = (e) => {
     if (e.target.type === "checkbox") {
       const { technologies } = state;
-
       setState({
         ...state,
-        technologies: [...technologies, { [e.target.name]: e.target.value }],
+        technologies: [...technologies, { name: e.target.value }],
       });
     } else {
       setState({
@@ -89,7 +88,7 @@ export default function UploadProject(): JSX.Element {
           {renderInputCheck("css", "CSS")}
         </div>
         {renderInputText("uri", "URI")}
-        <input type="file" name="projectimg" onChange={uploadHandler} />
+        <input type="file" name="projectimg" onChange={uploadHandler} className={styles.file} />
         <input
           type="date"
           name="date"
@@ -97,7 +96,7 @@ export default function UploadProject(): JSX.Element {
           onChange={onChangeHandler}
           accept="image/png, image/gif, image/jpeg"
         />
-        <select name="type" id="" className={styles.select}>
+        <select name="type" id="" className={styles.select} onChange={onChangeHandler}>
           <option value="web">Web</option>
           <option value="designer">Designer</option>
         </select>
