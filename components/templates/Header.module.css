@@ -20,13 +20,17 @@
     font-size: 24px;
 }
 
-.home_icon {
+.home_icon, .panel_icon {
     background-color: var(--purple0);
     padding: 15px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-self: center;
+}
+
+.panel_icon {
+    margin-left: 5px;
 }
 
 .home_icon a {
@@ -72,7 +76,7 @@
     flex-direction: column;
     cursor: pointer;
     width: 70px;
-    height: 78px;
+    height: 74px;
     border-radius: 4px 4px 0px 0px;
 }
 
