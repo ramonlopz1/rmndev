@@ -9,6 +9,7 @@ import useSlide, { ProjectsList } from "../../../../hooks/useSlide";
 import Loading from "../../../templates/Loading";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface SlideProps {
   filter: string; // all / new / old
@@ -31,10 +32,21 @@ export default function Slide(props: SlideProps): JSX.Element {
     return data.map((project, i): JSX.Element => {
       if (project.type === props.type) {
         return (
-          <div className={styles.content_element} key={i}>
-            <Image src={`/imgs/myprojects/${project.img}`} alt="project img" fill />
-            {renderCardLabel(project.name)}
-          </div>
+          <Link href={{
+            pathname: `photo/${project._id}`,
+              // query: {
+              //   project: JSON.stringify(project)
+              // }
+          }}>
+            <div className={styles.content_element} key={i}>
+              <Image
+                src={`/imgs/myprojects/${project.img}`}
+                alt="project img"
+                fill
+              />
+              {renderCardLabel(project.name)}
+            </div>
+          </Link>
         );
       }
     });
