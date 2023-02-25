@@ -1,7 +1,9 @@
 import styles from "./Content.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
+import Link from "next/link";
 
 type Project = {
   name: string;
@@ -28,18 +30,7 @@ export default function Content(): JSX.Element {
   return (
     <main className={styles.content}>
       {project ? (
-        <div className={styles.mainBox}>
-          <div className={styles.topContainer}>
-            <h2 className={styles.title}>{project.name}</h2>
-            <p className={styles.about}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-              reprehenderit et nesciunt sint dolores magnam unde esse temporibus
-              modi, vitae, ipsam non culpa necessitatibus earum labore
-              voluptatem quibusdam sapiente hic.
-            </p>
-            <strong>Tecnologias Utilizadas:</strong>
-            <div></div>
-          </div>
+        <div className={styles.section}>
           <div className={styles.imgWrapper}>
             <div className={styles.img}>
               <Image
@@ -48,6 +39,36 @@ export default function Content(): JSX.Element {
                 fill
               />
             </div>
+          </div>
+          <div className={styles.description}>
+            <a className={styles.closeBtn}>
+              <Link href="/">
+                <IoMdClose />
+              </Link>
+            </a>
+            <h2 className={styles.title}>{project.name}</h2>
+            <p className={styles.about}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+              reprehenderit et nesciunt sint dolores magnam unde esse temporibus
+              modi, vitae, ipsam non culpa necessitatibus earum labore
+              voluptatem quibusdam sapiente hic.
+            </p>
+            
+            <strong>Tecnologias Utilizadas:</strong>
+            <div></div>
+            <div className={styles.blankLinks}>
+              <a className={styles.blankLink}>
+                <Link href="/">
+                  <span>Demo</span>
+                </Link>
+              </a>
+              <a className={styles.blankLink}>
+                <Link href="/">
+                  <span>Github</span>
+                </Link>
+              </a>
+            </div>
+            <span className={styles.date}>12/12/2021</span>
           </div>
         </div>
       ) : (
