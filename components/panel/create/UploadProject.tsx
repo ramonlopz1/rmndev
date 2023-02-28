@@ -1,7 +1,7 @@
 import styles from "./UploadProject.module.css";
 import { useState } from "react";
-import postProject from "../../pages/api/auth/utils/postProject";
-import postImg from "../../pages/api/auth/utils/postImg";
+import postProject from "../../../pages/api/auth/utils/postProject";
+import postImg from "../../../pages/api/auth/utils/postImg";
 
 const initialState = {
   name: "Codificador de Textos",
@@ -68,7 +68,6 @@ export default function UploadProject(): JSX.Element {
         <input
           type="checkbox"
           name={name}
-          id=""
           value={name}
           onChange={onChangeHandler}
         />
@@ -84,8 +83,13 @@ export default function UploadProject(): JSX.Element {
 
         <div className={styles.inputChecks}>
           {renderInputCheck("html", "HTML5")}
-          {renderInputCheck("js", "JS")}
-          {renderInputCheck("css", "CSS")}
+          {renderInputCheck("css", "CSS3")}
+          {renderInputCheck("js", "JavaScript")}
+          {renderInputCheck("reactjs", "ReactJS")}
+          {renderInputCheck("nodejs", "NodeJS")}
+          {renderInputCheck("mongodb", "MongoDB")}
+          {renderInputCheck("mysql", "MySQL")}
+          {renderInputCheck("npm", "NPM")}
         </div>
         {renderInputText("uri", "URI")}
         <input type="file" name="projectimg" onChange={uploadHandler} className={styles.file} />

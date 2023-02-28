@@ -53,9 +53,21 @@ export default function Content(): JSX.Element {
               modi, vitae, ipsam non culpa necessitatibus earum labore
               voluptatem quibusdam sapiente hic.
             </p>
-            
+
             <strong>Tecnologias Utilizadas:</strong>
-            <div></div>
+            <div className={styles.techImgs}>
+              {project.technologies.map((elem, i) => {
+                return (
+                  <div className={styles.techImg} key={i}>
+                    <Image
+                      src={`/imgs/technologies/${elem.name}.png`}
+                      alt="technolgy img"
+                      fill
+                    />
+                  </div>
+                );
+              })}
+            </div>
             <div className={styles.blankLinks}>
               <a className={styles.blankLink}>
                 <Link href="/">

@@ -1,7 +1,6 @@
 import multer from "multer";
 import { NextApiRequest, NextApiResponse } from "next";
 
-import path from "path";
 
 export const config = {
   api: {

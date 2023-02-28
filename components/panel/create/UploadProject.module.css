@@ -44,10 +44,13 @@
 .inputChecks {
     display: flex;
     justify-content: center;
-    gap: 15px
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .checkbox {
+    display: flex;
+    font-size: 14px;
     color: var(--vsfunc);
 }
 

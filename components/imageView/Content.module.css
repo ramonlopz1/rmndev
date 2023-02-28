@@ -110,3 +110,20 @@
   position: relative;
   overflow: hidden;
 }
+
+.techImgs {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-left: -10px;
+  width: 100%;
+}
+
+.techImg {
+  height: 30px;
+  width: 43px;
+  position: relative;
+  overflow: hidden;
+}
